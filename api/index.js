@@ -1,6 +1,7 @@
 const express =require('express');
 const jwt =require('jsonwebtoken')
 const app=express()
+app.use(express.json)
 
 const users=[
     {
@@ -16,9 +17,9 @@ const users=[
         isAdmin:false
     }
 ];
-
-app.post("/api/login",(req,res)=>{
-    const {userName,password}=req.body;
-})
+app.get("/api/login",(req,res)=>{
+    console.log("hi...........")
+    res.json('hi')
+});
 
 app.listen(5000,()=>{console.log("Backande server is running on 5000 port")});
